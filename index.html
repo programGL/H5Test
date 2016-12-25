@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <!-- <meta http-equiv="refresh" content="4,http://www.baidu.com"/>-->
+    <meta charset="UTF-8">
+    <title>试试</title>
+    <style type="text/css">
+        #changeColor{
+            width:200px;
+            height: 200px;
+            border: 1px solid #eeeeee;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            //setInterval("alert(getColor())",1000)
+            setInterval("changColor()",1000);
+            setInterval("setDate()",1000);
+
+            setDate();
+
+        };
+        function setDate(){
+            var da=document.getElementById("date");
+            var date=new Date;
+            var str=date.getHours()+":";
+            str+=date.getMinutes()+":";
+            var s=date.getSeconds();
+           if(s<=9){
+               s="0"+s;
+           }
+
+            str+=s;
+            da.innerHTML=str;
+        }
+        function changColor(){
+            var div=document.getElementById("changeColor");
+            div.style.background=getColor();
+        }
+        function getColor(){
+            var r=Math.floor(Math.random()*255).toString(16);
+            r=r.length<2?"0"+r:r;
+            // alert(r);
+            var g=Math.floor(Math.random()*256).toString(16);
+            g=g.length<2?"0"+g:g;
+            //alert(g);
+            var b=Math.floor(Math.random()*255).toString(16);
+            b=b.length<2?"0"+b:b;
+            //alert(b);
+            return "#"+r+g+b;
+        }
+    </script>
+</head>
+<body>
+    <div id="changeColor">
+
+    </div>
+    <div id="date">
+        ajdfakjfdlajsdflk
+        woshihibaba
+    </div>
+</body>
+</html>
